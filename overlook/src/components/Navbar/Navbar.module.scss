@@ -1,0 +1,145 @@
+@use '../../styles/variables' as *;
+
+.navbar {
+    background: $black; 
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: $font;
+  }
+  
+  .navbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 100%;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    background: $black; 
+    padding: 10px;
+    margin-left: 40px;
+  }
+  
+  .logo img {
+    height: 70px; 
+    max-width: 100%;
+    display: block; 
+    background: $black;
+  }
+  
+  .navLinks {
+    display: flex;
+    gap: 25px; 
+    background: transparent; 
+    padding: 0; 
+  }
+  
+  .navLinks a {
+    color: $white;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navLinks a:hover,
+  .navLinks a.active {
+    color: $red;
+  }
+  
+  .navLinks a:not(:last-child)::after {
+    content: " | ";
+    color: $white;
+    padding: 0 10px;
+  }
+  
+  .burgerMenu {
+    display: none;
+    background: transparent !important; 
+    border: none;
+    cursor: pointer;
+  }
+  
+  .burgerMenu svg {
+    color: $white;
+    background: transparent; 
+  }
+
+
+  @media (max-width: 1024px) { 
+    .logo {
+        margin-left: -20px;
+    }
+
+    .burgerMenu {
+      display: block !important; 
+      color: $white;
+      cursor: pointer;
+      background: transparent !important;
+    }
+
+    .navLinks {
+      display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: $black;
+      width: 250px;
+      padding: 15px;
+      border-bottom: 1px solid $header-gray;
+      text-align: left;
+    }
+
+    .navLinks.open {
+      display: flex;
+    }
+
+    .navLinks a::after {
+        content: none !important; 
+    }
+}
+  
+  
+  @media (max-width: 768px) {
+    .logo {
+        margin-left: -20px;
+    }
+
+    .burgerMenu {
+      display: block;
+      color: $white;
+      cursor: pointer;
+      background: transparent !important ;
+    }
+  
+    .navLinks {
+      margin-top: 40px;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: $black;
+      width: 200px;
+      padding: 15px;
+      border-bottom: 1px solid $header-gray;
+      text-align: left;
+    }
+
+    .navLinks a::after {
+        content: none !important; 
+    }
+  
+    .navLinks.open {
+      display: flex;
+    }
+  }
+
