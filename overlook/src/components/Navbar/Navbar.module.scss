@@ -65,6 +65,7 @@
     background: transparent !important; 
     border: none;
     cursor: pointer;
+    z-index: 1000 !important;
   }
   
   .burgerMenu svg {
@@ -83,27 +84,38 @@
       color: $white;
       cursor: pointer;
       background: transparent !important;
+      z-index: 1000 !important;
     }
 
-    .navLinks {
-      display: none; 
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: $black;
-      width: 250px;
-      padding: 15px;
-      border-bottom: 1px solid $header-gray;
-      text-align: left;
-    }
+    @media (max-width: 1024px) {
+      .navLinks {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95); 
+        width: 250px;
+        padding: 15px;
+        text-align: left;
+        z-index: 1100 !important; 
+      }
+    
+      .navLinks.open {
+        display: flex !important; 
+      }
 
-    .navLinks.open {
-      display: flex;
-    }
-
-    .navLinks a::after {
+      .navLinks a::after {
         content: none !important; 
+        display: none !important; 
+      }
+    
+      .navLinks a {
+        color: white !important; 
+        font-size: 18px;
+        padding: 10px 15px;
+        text-decoration: none;
+      }
     }
 }
   
@@ -118,6 +130,7 @@
       color: $white;
       cursor: pointer;
       background: transparent !important ;
+      z-index: 1000 !important;
     }
   
     .navLinks {
@@ -132,6 +145,7 @@
       padding: 15px;
       border-bottom: 1px solid $header-gray;
       text-align: left;
+      content: none !important;
     }
 
     .navLinks a::after {

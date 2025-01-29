@@ -1,0 +1,55 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: $background;
+  color: $dark-gray; 
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.left p {
+  margin: 0;
+  font-size: 14px;
+  background: none;
+  font-family: $font;
+}
+
+.center {
+  display: flex;
+  gap: 10px;
+  background: none !important; 
+}
+
+.icon {
+  font-size: 24px;
+  color: $dark-gray; 
+  background: none !important; 
+  box-shadow: none !important; 
+  transition: color 0.3s ease-in-out;
+}
+
+.icon:hover {
+  color: $black;
+}
+
+.right {
+  display: flex;
+  gap: 15px;
+}
+
+.right a {
+  text-decoration: none;
+  color: $dark-gray;
+  font-size: 14px;
+  background: none !important; 
+  box-shadow: none !important; 
+  transition: color 0.3s ease-in-out;
+  font-family: $font;
+}
+
+.right a:hover {
+  color: $black;
+}

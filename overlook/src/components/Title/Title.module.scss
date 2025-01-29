@@ -1,0 +1,16 @@
+@use '../../styles/variables' as*;
+
+.titleContainer {
+    width: 100%;
+    text-align: left; 
+    padding: 20px 0;
+    font-family: $font;
+  
+    h2 {
+      font-size: 20px;
+      font-weight: 300;
+      color: $black;
+      padding-left: 15px;
+    }
+  }
+  

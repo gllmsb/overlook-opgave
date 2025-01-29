@@ -1,0 +1,67 @@
+@use '../../styles/variables' as *;
+
+.card {
+  position: relative;
+  background: $white;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+  height: 50px; 
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  background: transparent;
+  color: black;
+  transition: color 0.3s ease-in-out;
+  font-family: $font;
+}
+
+.description {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-family: $font;
+}
+
+.card:hover .content {
+  height: 120px; 
+}
+
+.card:hover .title {
+  background: transparent;
+  color: $red; 
+}
+
+.card:hover .description {
+  background: transparent;
+  opacity: 1;
+  max-height: 100px; 
+}
