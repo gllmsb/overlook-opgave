@@ -1,0 +1,26 @@
+@use "../../styles/variables" as *;
+
+.countryMenu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.countryLink {
+  text-decoration: none;
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: normal;
+  transition: color 0.3s ease-in-out;
+  
+  &:hover {
+    color: $black;
+  }
+
+  &.active {
+    color: $red;
+  }
+}
